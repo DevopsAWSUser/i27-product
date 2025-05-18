@@ -176,7 +176,7 @@ pipeline {
                         
                     echo "Valid tag detected: ${env.GIT_BRANCH}. Proceeding with production deployment."
                     imageValidation().call()
-                    dockerDeploy('prod', '8132', '8132').call()
+                    dockerDeploy('prod', '9132', '8132').call()
                 }
             }
         }
@@ -277,5 +277,5 @@ def dockerBuildandPush() {
   //dev ==> 5132
   //test ==> 6132
   // stage ==> 7132
- // prod ==> 8132
+ // prod ==> 9132
 
