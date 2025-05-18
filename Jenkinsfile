@@ -121,38 +121,38 @@ pipeline {
             }
         }
 
-        stage('Deploy to Dev') { //5761
+        stage('Deploy to Dev') { //5132
             when {
                 expression { params.deployToDev == 'yes' }
             }
             steps {
                 script {
                     imageValidation().call()
-                    dockerDeploy('dev', '5761', '8761').call()
+                    dockerDeploy('dev', '5132', '8132').call()
                 }
             }
         }
 
-        stage('Deploy to Test') { //6761
+        stage('Deploy to Test') { //6132
             when {
                 expression { params.deployToTest == 'yes' }
             }
             steps {
                 script {
                     imageValidation().call()
-                    dockerDeploy('test', '6761', '8761').call()
+                    dockerDeploy('test', '6132', '8132').call()
                 }
             }
         }
 
-        stage('Deploy to Stage') { //7761
+        stage('Deploy to Stage') { //7132
             when {
                 expression { params.deployToStage == 'yes' }
             }
             steps {
                 script {
                     imageValidation().call()
-                    dockerDeploy('stage', '7761', '8761').call()
+                    dockerDeploy('stage', '7132', '8132').call()
                 }
             }
         }
@@ -176,7 +176,7 @@ pipeline {
                         
                     echo "Valid tag detected: ${env.GIT_BRANCH}. Proceeding with production deployment."
                     imageValidation().call()
-                    dockerDeploy('prod', '8761', '8761').call()
+                    dockerDeploy('prod', '8132', '8132').call()
                 }
             }
         }
@@ -270,3 +270,12 @@ def dockerBuildandPush() {
 // test  => 6761
 // stage => 7761
 // prod  => 8761
+
+
+
+// product, container port 8132
+  //dev ==> 5132
+  //test ==> 6132
+  // stage ==> 7132
+ // prod ==> 8132
+
