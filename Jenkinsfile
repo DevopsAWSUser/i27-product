@@ -279,3 +279,9 @@ def dockerBuildandPush() {
   // stage ==> 7132
  // prod ==> 9132
 
+
+// user, container port 8232
+  //dev ==> 5232
+  //test ==> 6232
+  // stage ==> 7232
+ // prod ==> 8232
