@@ -32,9 +32,9 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    password: Gcp@db2024
-    url: jdbc:mysql://34.69.79.12:3306/learnerCrownClothing?useSSL=FALSE
-    username: db_user
+    password: Redhatroot
+    url: jdbc:mysql://database-1.cdig44skorbc.ap-southeast-1.rds.amazonaws.com:3306/learnerCrownClothing?useSSL=FALSE
+    username: admin
   jpa:
     hibernate:
       ddl-auto: update
